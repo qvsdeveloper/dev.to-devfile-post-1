@@ -1,0 +1,23 @@
+schemaVersion: 2.0.0
+metadata:
+  name: devto-article
+  version: 1.0.1
+  displayName: devto-article
+  description: devfile for article
+  tags: ["devto"]
+components:
+  - name: devto
+    container:
+      image: public.ecr.aws/aws-mde/universal-image:3.0
+      env:
+        - name: SCRIPT_PATH
+          value: /projects/devto-article/project_utilities/devfile
+commands:
+  - id: run-script
+    exec:
+      component: devto
+      commandLine: "bash ${SCRIPT_PATH}/script.sh"
+      workingDir: "${SCRIPT_PATH}"
+events:
+  postStart:
+    - run-script
