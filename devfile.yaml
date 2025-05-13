@@ -11,7 +11,7 @@ components:
       image: public.ecr.aws/aws-mde/universal-image:3.0
       env:
         - name: SCRIPT_PATH
-          value: /projects/devto-article/project_utilities/devfile
+          value: /projects/dev.to-devfile-post-1/project_utilities/devfile
 commands:
   - id: run-script
     exec:
